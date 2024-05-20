@@ -28,7 +28,7 @@
             text-align: center;
             padding: 20px 0;
         }
-        header h1 {
+        header h1a {
             position: absolute; /* Set the h1 to absolute positioning */
             top: 30%; /* Position it 50% from the top */
             left: 50%; /* Position it 50% from the left */
@@ -38,19 +38,25 @@
             text-align: center; /* Center-align the text */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a text shadow for better visibility */
         }
-        /* Media query for smaller screens (e.g., mobile devices) */
-        @media (max-width: 375px) {
-        h1 {
-            /*font-size: calc(6vw + 10px); /* Adjust font size based on viewport width */
-            /*max-width: 90%; /* Limit the width of the text to ensure it fits within the banner image */
-            /*margin: 0 auto; /* Center the text horizontally within the header */
+        header {
+            position: relative;
+            text-align: center; /* Center the text horizontally within the header */
+        }
 
+        h1 {
             font-size: calc(4vw + 10px); /* Adjust font size based on viewport width */
             color: white;
             position: absolute; /* Position the text relative to its container */
             top: 50%; /* Align the top of the text with the vertical center of its container */
             left: 50%; /* Align the left side of the text with the horizontal center of its container */
             transform: translate(-50%, -50%); /* Center the text perfectly */
+        }
+        /* Media query for smaller screens (e.g., mobile devices) */
+        /*@media (max-width: 375px) {
+        h1 {
+            /*font-size: calc(6vw + 10px); /* Adjust font size based on viewport width */
+            /*max-width: 90%; /* Limit the width of the text to ensure it fits within the banner image */
+            /*margin: 0 auto; /* Center the text horizontally within the header */
         }
         header h1b {
             margin: 0;
