@@ -391,7 +391,46 @@
         });
     });
 </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const contactForm = document.getElementById('contactForm');
+        const messageField = document.getElementById('message');
+        const wordCount = document.getElementById('wordCount');
 
+        messageField.addEventListener('input', function() {
+            const words = messageField.value.split(/\s+/).filter(word => word.length > 0);
+            wordCount.textContent = `${words.length}/250 words`;
+        });
+
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission behavior
+
+            const emailField = document.getElementById('email');
+            const emailValue = emailField.value;
+
+            if (!emailValue.includes('@')) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            const words = messageField.value.split(/\s+/).filter(word => word.length > 0);
+            if (words.length > 250) {
+                alert('Message cannot exceed 250 words.');
+                return;
+            }
+
+            // Construct email body
+            const subject = 'Query about Naples event';
+            const body = `Full name: ${contactForm.name.value}\nEmail address: ${emailValue}\nQuery (Free text): ${messageField.value}`;
+
+            // Send email
+            window.location.href = `mailto:admin-mabw@protonmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            // Reset form after submission
+            contactForm.reset();
+        });
+    });
+</script>
 
 </html>
 
