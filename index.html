@@ -133,24 +133,20 @@
         .benefits {
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
         }
-        .benefits ul {
-            list-style: none;
-            padding: 0;
-        }
-        .benefits ul li {
-            margin: 5px 0;
-        }
+
         .benefits-list {
             list-style-type: disc;
             margin: 0;
             padding: 0;
+            flex: 1; /* Equal width for both columns */
+            max-width: 45%; /* Limit maximum width for better spacing on larger screens */
         }
 
         @media (max-width: 768px) {
-        .benefits {
-            flex-direction: column;
-            align-items: center;
+        .benefits-list {
+            max-width: 100%; /* Full width on smaller screens */
             }
         }
 
