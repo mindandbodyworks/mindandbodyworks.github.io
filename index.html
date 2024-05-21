@@ -133,20 +133,16 @@
         .benefits {
             display: flex;
             justify-content: space-between;
-        
         }
-
-        .benefits-list {
-            list-style-type: disc;
-            margin: 0;
+        .benefits ul {
+            list-style: none;
             padding: 0;
-            flex: 1; /* Equal width for both columns */
-            max-width: 45%; /* Limit maximum width for better spacing on larger screens */
-            font-size: 16px; /* Decrease font size for smaller screens */
         }
+        .benefits ul li {
+            margin: 5px 0;
 
         @media (max-width: 768px) {
-        .benefits-list {
+        .benefits {
             max-width: 100%; /* Full width on smaller screens */
             font-size: 14px; /* Decrease font size for smaller screens */
             }
