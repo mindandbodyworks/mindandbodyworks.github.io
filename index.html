@@ -111,6 +111,13 @@
             text-align: center; /* Center the text */
             box-sizing: border-box; /* Ensure padding and borders are included in the width */
         }
+        /* Media query for portrait orientation on mobile devices */
+        @media (max-width: 767px) and (orientation: portrait) {
+        .cta {
+            width: 80%; /* Adjust the width for portrait orientation */
+            padding: 10px 20px; /* Adjust padding if needed */
+            }
+        }
 
         .dark {
             padding: 20px;
