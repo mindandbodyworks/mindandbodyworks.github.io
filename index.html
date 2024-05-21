@@ -353,6 +353,7 @@
         const contactForm = document.getElementById('contactForm');
         const messageField = document.getElementById('message');
         const wordCount = document.getElementById('wordCount');
+        let scrollPosition = 0;
 
         messageField.addEventListener('input', function() {
             const words = messageField.value.split(/\s+/).filter(word => word.length > 0);
@@ -384,6 +385,9 @@
             window.location.href = `mailto:admin-mabw@protonmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         // Reset form after submission
             contactForm.reset();
+
+            // Restore scroll position
+            window.scrollTo(0, scrollPosition);
         });
     });
 </script>
