@@ -133,18 +133,20 @@
         .benefits {
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
         }
+
         .benefits ul {
             list-style: none;
             padding: 0;
+            margin: 0; /* Remove default margin */
+            width: 50%; /* Set width to 50% for two columns */
+            box-sizing: border-box; /* Ensure padding and border are included in the width */
         }
-        .benefits ul li {
-            margin: 5px 0;
 
-        @media (max-width: 768px) {
-        .benefits {
-            max-width: 100%; /* Full width on smaller screens */
-            font-size: 14px; /* Decrease font size for smaller screens */
+            @media screen and (max-width: 767px) {
+            .benefits ul {
+            width: 100%; /* Full width on smaller screens for single column */
             }
         }
 
