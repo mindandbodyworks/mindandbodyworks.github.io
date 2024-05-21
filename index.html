@@ -339,6 +339,8 @@
 
                 // Send email
                 window.location.href = `mailto:admin-mabw@protonmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                // Reset form after submission
+                contactForm.reset();
             });
         });
     </script>
