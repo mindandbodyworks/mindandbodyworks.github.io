@@ -224,18 +224,63 @@
     </section>
 
     <footer>
-        <h2><strong>Here’s how a balanced meal can be structured:</strong></h2>
-        <p class="extra-space"></p>
-        <p><strong>Vegetables:</strong> Ideally, half of the plate should be filled with vegetables. Try to include a variety of colors and types, both raw and cooked, for a range of nutrients.</p>
-        <p><strong>Proteins:</strong> About a quarter of the plate should consist of protein sources such as chicken, fish, eggs, tofu, or legumes (beans and lentils).</p>
-        <p><strong>Complex carbohydrates:</strong> Another quarter of the plate should contain complex carbohydrates like whole grains (brown rice, quinoa, or whole grain pasta) or starchy vegetables (sweet potatoes).</p>
-        <p><strong>Healthy fats:</strong> Incorporate healthy fats from sources like olive oil, avocado, or nuts. These fats are important for nutrient absorption and overall health.</p>
-        <p><strong>Hydration:</strong> Accompany your meal with water, the best choice for staying hydrated.</p>
-        <p>A balanced meal helps you maintain nutritional balance, providing your body with the energy and nutrients it needs to function at its best. This approach can be adjusted based on your individual dietary needs and health goals.</p>
-        <p class="extra-space"></p>
-        <p>During the two-day course you experience two states of consciousness: Focus 10, state of “body asleep and mind awake”; and Focus 12, the state of expanded awareness. Accessing and exploring these states allow you to know and better understand your Total Self, while accessing new or unexplored inner resources.</p>
-        <p>Some participants also report experiences of contact and communication with deceased loved ones, out-of-body experiences (OBEs) and astral travel, and other mystical experiences. However, this does not happen often and cannot be guaranteed.</p>
-        <p>What we do promise is that you will return home with new experiences, new knowledge and newly-found skills useful for accessing and taking advantage of these expanded states of consciousness. And you will be able to do so on your own without using Hemi-Sync®.</p>
+        <h2><strong>Contact us</strong></h2>
+       <p>*** Please note that when you press 'Submit' below it will automatically open your default email account to send the email to us*** </p>
+       
+    <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" maxlength="250" required></textarea>
+        <div id="wordCount">0/250 words</div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            const messageField = document.getElementById('message');
+            const wordCount = document.getElementById('wordCount');
+
+            messageField.addEventListener('input', function() {
+                const words = messageField.value.split(/\s+/).filter(word => word.length > 0);
+                wordCount.textContent = `${words.length}/250 words`;
+            });
+
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const emailField = document.getElementById('email');
+                const emailValue = emailField.value;
+
+                if (!emailValue.includes('@')) {
+                    alert('Please enter a valid email address.');
+                    return;
+                }
+
+                const words = messageField.value.split(/\s+/).filter(word => word.length > 0);
+                if (words.length > 250) {
+                    alert('Message cannot exceed 250 words.');
+                    return;
+                }
+
+                // Construct email body
+                const subject = 'Mail from MABW Website';
+                const body = `Name: ${contactForm.name.value}\nEmail: ${emailValue}\nMessage: ${messageField.value}`;
+
+                // Send email
+                window.location.href = `mailto:admin-mabw@protonmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            });
+        });
+    </script>
+
+</html>
+
         <p class="extra-space"></p>
         <p>Photo by <a href="https://unsplash.com/@gluca?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Gianluca Cinnante</a> on <a href="https://unsplash.com/photos/a-view-of-a-city-with-mountains-in-the-background-hINQGrMPfK4?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></p>
         <p>Mockup landing page - Naples Reloaded &copy; 2024</p>
