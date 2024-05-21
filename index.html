@@ -332,6 +332,59 @@
         });
     </script>
 
+    <form id="contactForm">
+    <label for="name">Full name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email address:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Query (Free text):</label>
+    <textarea id="message" name="message" rows="4" maxlength="250" required></textarea>
+    <div id="wordCount">0/250 words</div>
+
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const contactForm = document.getElementById('contactForm');
+        const messageField = document.getElementById('message');
+        const wordCount = document.getElementById('wordCount');
+
+        messageField.addEventListener('input', function() {
+            const words = messageField.value.split(/\s+/).filter(word => word.length > 0);
+            wordCount.textContent = `${words.length}/250 words`;
+        });
+
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const emailField = document.getElementById('email');
+            const emailValue = emailField.value;
+
+            if (!emailValue.includes('@')) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            const words = messageField.value.split(/\s+/).filter(word => word.length > 0);
+            if (words.length > 250) {
+                alert('Message cannot exceed 250 words.');
+                return;
+            }
+
+            // Construct email body
+            const subject = 'Query about Naples event';
+            const body = `Full name: ${contactForm.name.value}\nEmail address: ${emailValue}\nQuery (Free text): ${messageField.value}`;
+
+            // Send email
+            window.location.href = `mailto:admin-mabw@protonmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        });
+    });
+</script>
+
+
 </html>
 
         <p class="extra-space"></p>
