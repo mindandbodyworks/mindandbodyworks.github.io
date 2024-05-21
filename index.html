@@ -340,9 +340,13 @@
                 // Send email
                 window.location.href = `mailto:admin-mabw@protonmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
                
+                // Reset form after submission
+                //contactForm.reset();
+                // Reset form after submission
+                setTimeout(function() {
+                    contactForm.reset();
+                }, 5000); // 5000 milliseconds = 5 seconds
             });
-            // Reset form after submission
-                contactForm.reset();
         });
     </script>
 
