@@ -174,9 +174,15 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
+        #contactForm {
+        	display: flex; /* Use flexbox for layout */
+        	flex-wrap: wrap;
+    	}
+
+    	.form-section {
+        	flex: 1; /* Each section takes up equal space */
+        	padding: 10px;
+    	}
 
         label {
             display: block;
@@ -205,6 +211,11 @@
             color: #555;
             text-align: right;
             margin-bottom: 20px;
+        }
+        #submitSection {
+            display: flex; /* Use flexbox for layout within the right section */
+            flex-direction: column; /* Stack the elements vertically */
+            align-items: flex-start; /* Align elements to the start */
         }
 
         button {
