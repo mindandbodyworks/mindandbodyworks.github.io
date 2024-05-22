@@ -363,6 +363,39 @@
     </script>
 
 
+
+
+
+<style>
+    #contactForm {
+        display: flex; /* Use flexbox for layout */
+        flex-wrap: wrap;
+    }
+
+    .form-section {
+        flex: 1; /* Each section takes up equal space */
+        padding: 10px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    #message {
+        width: 100%; /* Ensure the message field spans the full width of its container */
+    }
+
+    #wordCount {
+        margin-top: 5px;
+    }
+
+    #submitSection {
+        display: flex; /* Use flexbox for layout within the right section */
+        flex-direction: column; /* Stack the elements vertically */
+        align-items: flex-start; /* Align elements to the start */
+    }
+</style>
+            
 <form id="contactForm">
     <div class="form-section"> <!-- New container for name and email fields -->
         <div class="form-group">
