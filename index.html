@@ -148,7 +148,8 @@
             width: 1250px; /* Added to make it stretch across the page */
             margin-left: 0; /* Adjust the margin-left as needed */
             font-size: 16px; /* Adjust font size as needed */
-            word-wrap: break-word; /* Ensure text wraps within the container */
+            max-width: 100%; /* Let the container adjust its width automatically */
+            flex-wrap: wrap;
         }
         .light .benefits ul {
             list-style-type: disc;
@@ -162,13 +163,28 @@
         @media screen and (max-width: 767px) {
         .light.container {
             padding: 10px;
-            font-size: 9px; /* Adjust font size for smaller screens */
-            word-wrap: break-word; /* Ensure text wraps within the container */
+            font-size: 16px; /* Adjust font size for smaller screens */
+            flex-wrap: wrap;
         }
 
         .light .benefits ul {
             padding-left: 15px;
-            }
+            }          
+        }
+        @media screen and (max-width: 767px) {
+    	.light.container {
+        	padding: 10px;
+        	font-size: 16px; /* Adjust font size for smaller screens */
+    	}
+
+    	.light .benefits ul {
+        	padding-left: 15px;
+    	}
+
+    	/* Adjustments for portrait orientation */
+    	@media (orientation: portrait) {
+        .light .benefits ul {
+            padding-left: 10px; /* Adjust padding for tighter spacing in portrait mode */
         }
         .benefits-wrapper {
             display: flex;
