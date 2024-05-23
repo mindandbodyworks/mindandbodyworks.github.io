@@ -377,6 +377,52 @@
     <section class="content container">
         <p>We will start the retreat on Thursday afternoon with a warm welcome to all participants: you will meet each other, the facilitators, and will have an introductory activity. You will spend Friday visiting well-known as well as off-the-beaten-track sites, with guides that will show you and tell you about the esoteric nature of symbols, statues, paintings, that still constitutes the hidden language of the initiates.</p>
     </section>
+
+
+    /* Container for the photo */
+        .photo-container {
+            max-width: 100%;
+            max-height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Responsive image styling */
+        .photo-container img {
+            width: 100%;
+            height: auto;
+            max-width: var(--max-width, 600px); /* Default max-width, can be customized */
+            max-height: var(--max-height, 400px); /* Default max-height, can be customized */
+            object-fit: cover; /* Ensures the image covers the container */
+        }
+
+        /* Media queries for different screen sizes */
+        @media (max-width: 768px) {
+        .photo-container img {
+        max-width: var(--max-width-mobile, 100%);
+        max-height: var(--max-height-mobile, 100%);
+    }
+}
+            
+    </style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Photo Container</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="photo-container">
+        <img src="https://github.com/mindandbodyworks/mindandbodyworks.github.io/raw/main/statue_3.png" alt="Your Photo">
+    </div>
+</body>
+</html>
+
+
+
     
     <section class="content container">
         <p>While on the organised tour we will nourish our bodies with a balanced meal: this is a meal that contains a variety of nutrients in appropriate proportions to promote overall health and wellbeing. This helps ensure that the meal provides the right amount of carbohydrates, proteins, healthy fats, vitamins, and minerals to sustain your daily activities and enhance the experiences during the weekend workshop.</p>
