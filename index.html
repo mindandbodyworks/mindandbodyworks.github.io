@@ -202,11 +202,12 @@
         }
 
         .bio img {
-            max-width: none;
-            width: auto; /* Set width to auto */
-            height: 131px; /* Set height based on UK passport photo height */
+            max-width: 100%;
+            height: auto; /* Maintain aspect ratio */
+            width: auto; /* Allow the image to adjust width based on container */
             margin-right: 20px;
             border-radius: 5px;
+            display: block; /* Make sure the image fills the entire width */
         }
 
         .bio-text {
@@ -237,6 +238,7 @@
             flex: unset;
             }
         }
+
             
         footer {
             padding: 20px;
