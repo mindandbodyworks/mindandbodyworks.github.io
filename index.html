@@ -468,7 +468,36 @@
     </section>
 
 
+<style>
 
+/* Container for the photo */
+        .photo-container {
+            max-width: 100%;
+            max-height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Responsive image styling */
+        .photo-container img {
+            width: 100%;
+            height: auto;
+            max-width: var(--max-width, 600px); /* Default max-width, can be customized */
+            max-height: var(--max-height, 400px); /* Default max-height, can be customized */
+            object-fit: cover; /* Ensures the image covers the container */
+        }
+
+        /* Media queries for different screen sizes */
+        @media (max-width: 768px) {
+        .photo-container img {
+        max-width: var(--max-width-mobile, 100%);
+        max-height: var(--max-height-mobile, 100%);
+    }
+}
+            
+    </style>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
