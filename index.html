@@ -212,7 +212,8 @@
         .bio img {
             max-width: 100%;
             height: auto;
-            flex: 1;
+            width: 105px; /* Set width based on UK passport photo width */
+            height: 131px; /* Set height based on UK passport photo height */
             margin-right: 20px;
             border-radius: 5px;
         }
@@ -237,12 +238,15 @@
 
         .bio img {
             margin: 0 0 10px 0;
+            width: auto; /* Reset width for smaller screens */
+            height: auto; /* Reset height for smaller screens */
         }
 
         .bio-text {
             flex: unset;
             }
         }
+            
         footer {
             padding: 20px;
             background-color: #CE7B27;
